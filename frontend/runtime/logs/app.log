@@ -1,0 +1,780 @@
+2016-04-25 08:53:50 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Connection.php:579
+Stack trace:
+#0 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#3 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Schema.php(444): yii\db\Connection->getSlavePdo()
+#5 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Connection.php(732): yii\db\Schema->quoteValue('admin')
+#6 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Command.php(164): yii\db\Connection->quoteValue('admin')
+#7 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Command.php(794): yii\db\Command->getRawSql()
+#8 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#9 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Query.php(243): yii\db\Command->queryOne()
+#10 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\ActiveQuery.php(285): yii\db\Query->one(NULL)
+#11 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\BaseActiveRecord.php(101): yii\db\ActiveQuery->one()
+#12 C:\wamp\www\Yii2App\common\models\User.php(82): yii\db\BaseActiveRecord::findOne(Array)
+#13 C:\wamp\www\Yii2App\common\models\LoginForm.php(73): common\models\User::findByUsername('admin')
+#14 C:\wamp\www\Yii2App\common\models\LoginForm.php(44): common\models\LoginForm->getUser()
+#15 [internal function]: common\models\LoginForm->validatePassword('password', NULL)
+#16 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\validators\InlineValidator.php(69): call_user_func(Array, 'password', NULL)
+#17 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\validators\Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(common\models\LoginForm), 'password')
+#18 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\base\Model.php(351): yii\validators\Validator->validateAttributes(Object(common\models\LoginForm), Array)
+#19 C:\wamp\www\Yii2App\common\models\LoginForm.php(58): yii\base\Model->validate()
+#20 C:\wamp\www\Yii2App\frontend\controllers\SiteController.php(80): common\models\LoginForm->login()
+#21 [internal function]: frontend\controllers\SiteController->actionLogin()
+#22 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#23 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#24 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('login', Array)
+#25 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/login', Array)
+#26 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#27 C:\wamp\www\Yii2App\frontend\web\index.php(18): yii\base\Application->run()
+#28 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Connection.php:534
+Stack trace:
+#0 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#1 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Schema.php(444): yii\db\Connection->getSlavePdo()
+#3 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Connection.php(732): yii\db\Schema->quoteValue('admin')
+#4 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Command.php(164): yii\db\Connection->quoteValue('admin')
+#5 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Command.php(794): yii\db\Command->getRawSql()
+#6 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#7 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\Query.php(243): yii\db\Command->queryOne()
+#8 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\ActiveQuery.php(285): yii\db\Query->one(NULL)
+#9 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\db\BaseActiveRecord.php(101): yii\db\ActiveQuery->one()
+#10 C:\wamp\www\Yii2App\common\models\User.php(82): yii\db\BaseActiveRecord::findOne(Array)
+#11 C:\wamp\www\Yii2App\common\models\LoginForm.php(73): common\models\User::findByUsername('admin')
+#12 C:\wamp\www\Yii2App\common\models\LoginForm.php(44): common\models\LoginForm->getUser()
+#13 [internal function]: common\models\LoginForm->validatePassword('password', NULL)
+#14 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\validators\InlineValidator.php(69): call_user_func(Array, 'password', NULL)
+#15 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\validators\Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(common\models\LoginForm), 'password')
+#16 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\base\Model.php(351): yii\validators\Validator->validateAttributes(Object(common\models\LoginForm), Array)
+#17 C:\wamp\www\Yii2App\common\models\LoginForm.php(58): yii\base\Model->validate()
+#18 C:\wamp\www\Yii2App\frontend\controllers\SiteController.php(80): common\models\LoginForm->login()
+#19 [internal function]: frontend\controllers\SiteController->actionLogin()
+#20 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#21 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#22 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('login', Array)
+#23 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/login', Array)
+#24 C:\wamp\www\Yii2App\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#25 C:\wamp\www\Yii2App\frontend\web\index.php(18): yii\base\Application->run()
+#26 {main}
+Additional Information:
+
+2016-04-25 08:53:50 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'bjJraVl3ZUpXUAAxFwEzeh9zPAQIDTUHV1wMJhMHKg48YhskG1oveQ=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => '09ddfe1659d45f90d937ca31b65f8fe09ae9ab0e6a7233e32b5f51e58c539013a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9bkXNvV0qAWmQzPM9ngOJpODRPpMB-J3\";}'
+    'PHPSESSID' => '47oeeecb2ol0mpeouftollifn7'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'dan'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://dan/Yii2App/frontend/web/index.php?r=site%2Flogin'
+    'HTTP_COOKIE' => '_csrf=09ddfe1659d45f90d937ca31b65f8fe09ae9ab0e6a7233e32b5f51e58c539013a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229bkXNvV0qAWmQzPM9ngOJpODRPpMB-J3%22%3B%7D; PHPSESSID=47oeeecb2ol0mpeouftollifn7'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '196'
+    'PATH' => 'C:\\Program Files\\Java\\jdk1.7.0_25\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\NetSarang;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\wamp\\bin\\php\\php5.5.12;C:\\ProgramData\\ComposerSetup\\bin;c:\\Program Files (x86)\\Microsoft SQL Server\\100\\Tools\\Binn\\;c:\\Program Files (x86)\\Microsoft SQL Server\\100\\DTS\\Binn\\;c:\\Program Files (x86)\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;c:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;C:\\Program Files (x86)\\Subversion\\bin;C:\\Program Files\\MySQL\\MySQL Server 5.5\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win64) OpenSSL/1.0.1g PHP/5.5.12 Server at dan Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win64) OpenSSL/1.0.1g PHP/5.5.12'
+    'SERVER_NAME' => 'dan'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/Yii2App/frontend/web/index.php'
+    'REMOTE_PORT' => '52308'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/Yii2App/frontend/web/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/Yii2App/frontend/web/index.php'
+    'PHP_SELF' => '/Yii2App/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1461567230.122
+    'REQUEST_TIME' => 1461567230
+]
+2016-04-25 18:58:46 [::1][-][-][error][ReflectionException] exception 'ReflectionException' with message 'Class yii\authclient\clients\Google does not exist' in /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/di/Container.php:415
+Stack trace:
+#0 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/di/Container.php(415): ReflectionClass->__construct('yii\\authclient\\...')
+#1 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/di/Container.php(358): yii\di\Container->getDependencies('yii\\authclient\\...')
+#2 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/di/Container.php(151): yii\di\Container->build('yii\\authclient\\...', Array, Array)
+#3 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('yii\\authclient\\...', Array, Array)
+#4 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2-authclient/Collection.php(109): yii\BaseYii::createObject(Array)
+#5 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2-authclient/Collection.php(83): yii\authclient\Collection->createClient('google', Array)
+#6 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2-authclient/Collection.php(66): yii\authclient\Collection->getClient('google')
+#7 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2-authclient/widgets/AuthChoice.php(152): yii\authclient\Collection->getClients()
+#8 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2-authclient/widgets/AuthChoice.php(117): yii\authclient\widgets\AuthChoice->defaultClients()
+#9 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2-authclient/widgets/AuthChoice.php(236): yii\authclient\widgets\AuthChoice->getClients()
+#10 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2-authclient/widgets/AuthChoice.php(266): yii\authclient\widgets\AuthChoice->renderMainContent()
+#11 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Widget.php(97): yii\authclient\widgets\AuthChoice->run()
+#12 /srv/applications/nyan/Yii2App/frontend/views/site/login.php(34): yii\base\Widget::widget(Array)
+#13 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/View.php(325): require('/srv/applicatio...')
+#14 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/srv/applicatio...', Array)
+#15 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/srv/applicatio...', Array, Object(frontend\controllers\SiteController))
+#16 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Controller.php(371): yii\base\View->render('login', Array, Object(frontend\controllers\SiteController))
+#17 /srv/applications/nyan/Yii2App/frontend/controllers/SiteController.php(119): yii\base\Controller->render('login', Array)
+#18 [internal function]: frontend\controllers\SiteController->actionLogin()
+#19 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#20 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#21 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('login', Array)
+#22 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('site/login', Array)
+#23 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#24 /srv/applications/nyan/Yii2App/frontend/web/index.php(18): yii\base\Application->run()
+#25 {main}
+2016-04-25 18:58:46 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    'optimizelyEndUserId' => 'oeu1439375245303r0.6806553206406534'
+    'my_wikiUserName' => 'Admin'
+    'lang' => 'b0db432cfa3b23847a3d6f40d71352452ede168as:2:\"en\";'
+    '_ga' => 'GA1.1.374315403.1440244560'
+    'sessionid' => '4anlm436k2l9p5t4c7fbnkpvg7nq28fd'
+    'optimizelySegments' => '{\"1841770756\":\"false\",\"1845570707\":\"gc\",\"1846311007\":\"campaign\"}'
+    'optimizelyBuckets' => '{}'
+    'mp_7dee34a3b508f34cfdecef0494099696_mixpanel' => '{\"distinct_id\": \"+254729383057\",\"$initial_referrer\": \"$direct\",\"$initial_referring_domain\": \"$direct\",\"$first_name\": \"Thomas Joel\",\"$last_name\": \"Karema\",\"$created\": \"Aug. 13, 2014, 7:13 p.m.\",\"$last_login\": \"March 31, 2016, 10:08 a.m.\",\"$email\": \"josiah@dumaworks.com\",\"$phone\": \"+254729383057\",\"Location\": \"Nairobi\",\"Birth date\": \"Jan. 1, 1987\",\"Gender\": \"None\",\"Salary\": \"20,000 - 30,000\",\"Employment status\": \"NA\",\"Profile type\": \"Both of these\",\"Availability\": \"Full Time Job \",\"__mps\": {},\"__mpso\": {},\"__mpa\": {},\"__mpu\": {},\"__mpap\": [],\"utm_source\": \"internal\",\"utm_medium\": \"email\",\"utm_campaign\": \"job_match\"}'
+    'csrftoken' => 'cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J'
+    'intercom-id' => '8c805082-8cce-4e6d-b7be-3ec8051ef412'
+    '_csrf' => 'd827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0vFLl24I2mnY9BwOso_uJUHkniZ57-bg\";}'
+    'PHPSESSID' => 'flpqo9e4j3hn88653ipnit2v75'
+]
+
+$_SESSION = [
+    'HA::CONFIG' => [
+        'php_session_id' => 's:26:\"flpqo9e4j3hn88653ipnit2v75\";'
+        'version' => 's:9:\"2.1.1-dev\";'
+        'config' => 'a:8:{s:8:\"base_url\";s:40:\"http://localhost/mykazi/user/login/oauth\";s:9:\"providers\";a:1:{s:8:\"Facebook\";a:2:{s:7:\"enabled\";b:1;s:4:\"keys\";a:2:{s:2:\"id\";s:15:\"631578883660600\";s:6:\"secret\";s:32:\"5a9d7d2abb86b151f9e6692c06a90cd7\";}}}s:10:\"debug_mode\";b:0;s:10:\"debug_file\";s:33:\"/srv/applications/mykazi/auth.log\";s:9:\"path_base\";s:71:\"/srv/applications/mykazi/protected/extensions/hoauth/hybridauth/Hybrid/\";s:14:\"path_libraries\";s:82:\"/srv/applications/mykazi/protected/extensions/hoauth/hybridauth/Hybrid/thirdparty/\";s:14:\"path_resources\";s:81:\"/srv/applications/mykazi/protected/extensions/hoauth/hybridauth/Hybrid/resources/\";s:14:\"path_providers\";s:81:\"/srv/applications/mykazi/protected/extensions/hoauth/hybridauth/Hybrid/Providers/\";}'
+    ]
+    'HA::STORE' => [
+        'hauth_session.facebook.is_logged_in' => 'i:1;'
+        'hauth_session.facebook.token.access_token' => 's:181:\"CAAIZBausCGzgBAObnL4Y4mjTADvoi6pZA4QSw7HMcY5OpKE7aARzGwsm18lhQafhVQ4Lu3vJoxiCwfNLi9WyR2kdaj8CzW8NXpsYnaylzPEZBUaZADNmdrNR0lqU9Ppxs13QnooLXXilyb5WugadTdABJv1AaenvCFlwWT6zrPz5CPeEN9O3\";'
+    ]
+    'Yii.CCaptchaAction.6d171539.user/registration.captcha' => 'hiiejv'
+    'Yii.CCaptchaAction.6d171539.user/registration.captchacount' => 2
+    'fb_631578883660600_access_token' => 'CAAIZBausCGzgBAObnL4Y4mjTADvoi6pZA4QSw7HMcY5OpKE7aARzGwsm18lhQafhVQ4Lu3vJoxiCwfNLi9WyR2kdaj8CzW8NXpsYnaylzPEZBUaZADNmdrNR0lqU9Ppxs13QnooLXXilyb5WugadTdABJv1AaenvCFlwWT6zrPz5CPeEN9O3'
+    'fb_631578883660600_user_id' => '10207776784571819'
+    '__flash' => []
+    '__returnUrl' => '/mkb/index.php'
+    '__captcha/site/captcha' => 'seqrawk'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vx4@tufDDCnUqgKawIgB8QAAAAg'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.86 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/nyan/frontend/web/index.php?r=site%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => 'optimizelyEndUserId=oeu1439375245303r0.6806553206406534; my_wikiUserName=Admin; lang=b0db432cfa3b23847a3d6f40d71352452ede168as%3A2%3A%22en%22%3B; _ga=GA1.1.374315403.1440244560; sessionid=4anlm436k2l9p5t4c7fbnkpvg7nq28fd; optimizelySegments=%7B%221841770756%22%3A%22false%22%2C%221845570707%22%3A%22gc%22%2C%221846311007%22%3A%22campaign%22%7D; optimizelyBuckets=%7B%7D; mp_7dee34a3b508f34cfdecef0494099696_mixpanel=%7B%22distinct_id%22%3A%20%22%2B254729383057%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22%24first_name%22%3A%20%22Thomas%20Joel%22%2C%22%24last_name%22%3A%20%22Karema%22%2C%22%24created%22%3A%20%22Aug.%2013%2C%202014%2C%207%3A13%20p.m.%22%2C%22%24last_login%22%3A%20%22March%2031%2C%202016%2C%2010%3A08%20a.m.%22%2C%22%24email%22%3A%20%22josiah%40dumaworks.com%22%2C%22%24phone%22%3A%20%22%2B254729383057%22%2C%22Location%22%3A%20%22Nairobi%22%2C%22Birth%20date%22%3A%20%22Jan.%201%2C%201987%22%2C%22Gender%22%3A%20%22None%22%2C%22Salary%22%3A%20%2220%2C000%20-%2030%2C000%22%2C%22Employment%20status%22%3A%20%22NA%22%2C%22Profile%20type%22%3A%20%22Both%20of%20these%22%2C%22Availability%22%3A%20%22Full%20Time%20Job%20%22%2C%22__mps%22%3A%20%7B%7D%2C%22__mpso%22%3A%20%7B%7D%2C%22__mpa%22%3A%20%7B%7D%2C%22__mpu%22%3A%20%7B%7D%2C%22__mpap%22%3A%20%5B%5D%2C%22utm_source%22%3A%20%22internal%22%2C%22utm_medium%22%3A%20%22email%22%2C%22utm_campaign%22%3A%20%22job_match%22%7D; csrftoken=cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J; intercom-id=8c805082-8cce-4e6d-b7be-3ec8051ef412; _csrf=d827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220vFLl24I2mnY9BwOso_uJUHkniZ57-bg%22%3B%7D; PHPSESSID=flpqo9e4j3hn88653ipnit2v75'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Fedora) PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'root@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/nyan/frontend/web/index.php'
+    'REMOTE_PORT' => '35525'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/nyan/frontend/web/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/nyan/frontend/web/index.php'
+    'PHP_SELF' => '/nyan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1461599926.708
+    'REQUEST_TIME' => 1461599926
+]
+2016-04-25 18:58:52 [::1][-][-][error][ReflectionException] exception 'ReflectionException' with message 'Class yii\authclient\clients\Google does not exist' in /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/di/Container.php:415
+Stack trace:
+#0 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/di/Container.php(415): ReflectionClass->__construct('yii\\authclient\\...')
+#1 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/di/Container.php(358): yii\di\Container->getDependencies('yii\\authclient\\...')
+#2 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/di/Container.php(151): yii\di\Container->build('yii\\authclient\\...', Array, Array)
+#3 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('yii\\authclient\\...', Array, Array)
+#4 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2-authclient/Collection.php(109): yii\BaseYii::createObject(Array)
+#5 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2-authclient/Collection.php(83): yii\authclient\Collection->createClient('google', Array)
+#6 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2-authclient/Collection.php(66): yii\authclient\Collection->getClient('google')
+#7 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2-authclient/widgets/AuthChoice.php(152): yii\authclient\Collection->getClients()
+#8 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2-authclient/widgets/AuthChoice.php(117): yii\authclient\widgets\AuthChoice->defaultClients()
+#9 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2-authclient/widgets/AuthChoice.php(236): yii\authclient\widgets\AuthChoice->getClients()
+#10 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2-authclient/widgets/AuthChoice.php(266): yii\authclient\widgets\AuthChoice->renderMainContent()
+#11 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Widget.php(97): yii\authclient\widgets\AuthChoice->run()
+#12 /srv/applications/nyan/Yii2App/frontend/views/site/login.php(34): yii\base\Widget::widget(Array)
+#13 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/View.php(325): require('/srv/applicatio...')
+#14 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/srv/applicatio...', Array)
+#15 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/srv/applicatio...', Array, Object(frontend\controllers\SiteController))
+#16 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Controller.php(371): yii\base\View->render('login', Array, Object(frontend\controllers\SiteController))
+#17 /srv/applications/nyan/Yii2App/frontend/controllers/SiteController.php(119): yii\base\Controller->render('login', Array)
+#18 [internal function]: frontend\controllers\SiteController->actionLogin()
+#19 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#20 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#21 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('login', Array)
+#22 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('site/login', Array)
+#23 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#24 /srv/applications/nyan/Yii2App/frontend/web/index.php(18): yii\base\Application->run()
+#25 {main}
+2016-04-25 18:58:52 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    'optimizelyEndUserId' => 'oeu1439375245303r0.6806553206406534'
+    'my_wikiUserName' => 'Admin'
+    'lang' => 'b0db432cfa3b23847a3d6f40d71352452ede168as:2:\"en\";'
+    '_ga' => 'GA1.1.374315403.1440244560'
+    'sessionid' => '4anlm436k2l9p5t4c7fbnkpvg7nq28fd'
+    'optimizelySegments' => '{\"1841770756\":\"false\",\"1845570707\":\"gc\",\"1846311007\":\"campaign\"}'
+    'optimizelyBuckets' => '{}'
+    'mp_7dee34a3b508f34cfdecef0494099696_mixpanel' => '{\"distinct_id\": \"+254729383057\",\"$initial_referrer\": \"$direct\",\"$initial_referring_domain\": \"$direct\",\"$first_name\": \"Thomas Joel\",\"$last_name\": \"Karema\",\"$created\": \"Aug. 13, 2014, 7:13 p.m.\",\"$last_login\": \"March 31, 2016, 10:08 a.m.\",\"$email\": \"josiah@dumaworks.com\",\"$phone\": \"+254729383057\",\"Location\": \"Nairobi\",\"Birth date\": \"Jan. 1, 1987\",\"Gender\": \"None\",\"Salary\": \"20,000 - 30,000\",\"Employment status\": \"NA\",\"Profile type\": \"Both of these\",\"Availability\": \"Full Time Job \",\"__mps\": {},\"__mpso\": {},\"__mpa\": {},\"__mpu\": {},\"__mpap\": [],\"utm_source\": \"internal\",\"utm_medium\": \"email\",\"utm_campaign\": \"job_match\"}'
+    'csrftoken' => 'cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J'
+    'intercom-id' => '8c805082-8cce-4e6d-b7be-3ec8051ef412'
+    '_csrf' => 'd827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0vFLl24I2mnY9BwOso_uJUHkniZ57-bg\";}'
+    'PHPSESSID' => 'flpqo9e4j3hn88653ipnit2v75'
+]
+
+$_SESSION = [
+    'HA::CONFIG' => [
+        'php_session_id' => 's:26:\"flpqo9e4j3hn88653ipnit2v75\";'
+        'version' => 's:9:\"2.1.1-dev\";'
+        'config' => 'a:8:{s:8:\"base_url\";s:40:\"http://localhost/mykazi/user/login/oauth\";s:9:\"providers\";a:1:{s:8:\"Facebook\";a:2:{s:7:\"enabled\";b:1;s:4:\"keys\";a:2:{s:2:\"id\";s:15:\"631578883660600\";s:6:\"secret\";s:32:\"5a9d7d2abb86b151f9e6692c06a90cd7\";}}}s:10:\"debug_mode\";b:0;s:10:\"debug_file\";s:33:\"/srv/applications/mykazi/auth.log\";s:9:\"path_base\";s:71:\"/srv/applications/mykazi/protected/extensions/hoauth/hybridauth/Hybrid/\";s:14:\"path_libraries\";s:82:\"/srv/applications/mykazi/protected/extensions/hoauth/hybridauth/Hybrid/thirdparty/\";s:14:\"path_resources\";s:81:\"/srv/applications/mykazi/protected/extensions/hoauth/hybridauth/Hybrid/resources/\";s:14:\"path_providers\";s:81:\"/srv/applications/mykazi/protected/extensions/hoauth/hybridauth/Hybrid/Providers/\";}'
+    ]
+    'HA::STORE' => [
+        'hauth_session.facebook.is_logged_in' => 'i:1;'
+        'hauth_session.facebook.token.access_token' => 's:181:\"CAAIZBausCGzgBAObnL4Y4mjTADvoi6pZA4QSw7HMcY5OpKE7aARzGwsm18lhQafhVQ4Lu3vJoxiCwfNLi9WyR2kdaj8CzW8NXpsYnaylzPEZBUaZADNmdrNR0lqU9Ppxs13QnooLXXilyb5WugadTdABJv1AaenvCFlwWT6zrPz5CPeEN9O3\";'
+    ]
+    'Yii.CCaptchaAction.6d171539.user/registration.captcha' => 'hiiejv'
+    'Yii.CCaptchaAction.6d171539.user/registration.captchacount' => 2
+    'fb_631578883660600_access_token' => 'CAAIZBausCGzgBAObnL4Y4mjTADvoi6pZA4QSw7HMcY5OpKE7aARzGwsm18lhQafhVQ4Lu3vJoxiCwfNLi9WyR2kdaj8CzW8NXpsYnaylzPEZBUaZADNmdrNR0lqU9Ppxs13QnooLXXilyb5WugadTdABJv1AaenvCFlwWT6zrPz5CPeEN9O3'
+    'fb_631578883660600_user_id' => '10207776784571819'
+    '__flash' => []
+    '__returnUrl' => '/mkb/index.php'
+    '__captcha/site/captcha' => 'seqrawk'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vx4@vATKF1NRI6W44u2XhwAAAAU'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.86 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_REFERER' => 'http://localhost/nyan/frontend/web/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => 'optimizelyEndUserId=oeu1439375245303r0.6806553206406534; my_wikiUserName=Admin; lang=b0db432cfa3b23847a3d6f40d71352452ede168as%3A2%3A%22en%22%3B; _ga=GA1.1.374315403.1440244560; sessionid=4anlm436k2l9p5t4c7fbnkpvg7nq28fd; optimizelySegments=%7B%221841770756%22%3A%22false%22%2C%221845570707%22%3A%22gc%22%2C%221846311007%22%3A%22campaign%22%7D; optimizelyBuckets=%7B%7D; mp_7dee34a3b508f34cfdecef0494099696_mixpanel=%7B%22distinct_id%22%3A%20%22%2B254729383057%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22%24first_name%22%3A%20%22Thomas%20Joel%22%2C%22%24last_name%22%3A%20%22Karema%22%2C%22%24created%22%3A%20%22Aug.%2013%2C%202014%2C%207%3A13%20p.m.%22%2C%22%24last_login%22%3A%20%22March%2031%2C%202016%2C%2010%3A08%20a.m.%22%2C%22%24email%22%3A%20%22josiah%40dumaworks.com%22%2C%22%24phone%22%3A%20%22%2B254729383057%22%2C%22Location%22%3A%20%22Nairobi%22%2C%22Birth%20date%22%3A%20%22Jan.%201%2C%201987%22%2C%22Gender%22%3A%20%22None%22%2C%22Salary%22%3A%20%2220%2C000%20-%2030%2C000%22%2C%22Employment%20status%22%3A%20%22NA%22%2C%22Profile%20type%22%3A%20%22Both%20of%20these%22%2C%22Availability%22%3A%20%22Full%20Time%20Job%20%22%2C%22__mps%22%3A%20%7B%7D%2C%22__mpso%22%3A%20%7B%7D%2C%22__mpa%22%3A%20%7B%7D%2C%22__mpu%22%3A%20%7B%7D%2C%22__mpap%22%3A%20%5B%5D%2C%22utm_source%22%3A%20%22internal%22%2C%22utm_medium%22%3A%20%22email%22%2C%22utm_campaign%22%3A%20%22job_match%22%7D; csrftoken=cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J; intercom-id=8c805082-8cce-4e6d-b7be-3ec8051ef412; _csrf=d827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220vFLl24I2mnY9BwOso_uJUHkniZ57-bg%22%3B%7D; PHPSESSID=flpqo9e4j3hn88653ipnit2v75'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Fedora) PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'root@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/nyan/frontend/web/index.php'
+    'REMOTE_PORT' => '35531'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/nyan/frontend/web/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/nyan/frontend/web/index.php'
+    'PHP_SELF' => '/nyan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1461599932.255
+    'REQUEST_TIME' => 1461599932
+]
+2016-04-25 20:55:30 [127.0.0.1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '->' (T_OBJECT_OPERATOR)' in /srv/applications/nyan/Yii2App/frontend/views/site/index.php:3
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-04-25 20:55:30 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'optimizelyEndUserId' => 'oeu1439375245303r0.6806553206406534'
+    'my_wikiUserName' => 'Admin'
+    'lang' => 'b0db432cfa3b23847a3d6f40d71352452ede168as:2:\"en\";'
+    '_ga' => 'GA1.1.374315403.1440244560'
+    'sessionid' => '4anlm436k2l9p5t4c7fbnkpvg7nq28fd'
+    'optimizelySegments' => '{\"1841770756\":\"false\",\"1845570707\":\"gc\",\"1846311007\":\"campaign\"}'
+    'optimizelyBuckets' => '{}'
+    'mp_7dee34a3b508f34cfdecef0494099696_mixpanel' => '{\"distinct_id\": \"+254729383057\",\"$initial_referrer\": \"$direct\",\"$initial_referring_domain\": \"$direct\",\"$first_name\": \"Thomas Joel\",\"$last_name\": \"Karema\",\"$created\": \"Aug. 13, 2014, 7:13 p.m.\",\"$last_login\": \"March 31, 2016, 10:08 a.m.\",\"$email\": \"josiah@dumaworks.com\",\"$phone\": \"+254729383057\",\"Location\": \"Nairobi\",\"Birth date\": \"Jan. 1, 1987\",\"Gender\": \"None\",\"Salary\": \"20,000 - 30,000\",\"Employment status\": \"NA\",\"Profile type\": \"Both of these\",\"Availability\": \"Full Time Job \",\"__mps\": {},\"__mpso\": {},\"__mpa\": {},\"__mpu\": {},\"__mpap\": [],\"utm_source\": \"internal\",\"utm_medium\": \"email\",\"utm_campaign\": \"job_match\"}'
+    'csrftoken' => 'cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J'
+    'intercom-id' => '8c805082-8cce-4e6d-b7be-3ec8051ef412'
+    '_csrf' => 'd827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0vFLl24I2mnY9BwOso_uJUHkniZ57-bg\";}'
+    'PHPSESSID' => 'flpqo9e4j3hn88653ipnit2v75'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vx5aEvBSClSMcpEDLDl3dAAAAAQ'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.86 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/nyan/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => 'optimizelyEndUserId=oeu1439375245303r0.6806553206406534; my_wikiUserName=Admin; lang=b0db432cfa3b23847a3d6f40d71352452ede168as%3A2%3A%22en%22%3B; _ga=GA1.1.374315403.1440244560; sessionid=4anlm436k2l9p5t4c7fbnkpvg7nq28fd; optimizelySegments=%7B%221841770756%22%3A%22false%22%2C%221845570707%22%3A%22gc%22%2C%221846311007%22%3A%22campaign%22%7D; optimizelyBuckets=%7B%7D; mp_7dee34a3b508f34cfdecef0494099696_mixpanel=%7B%22distinct_id%22%3A%20%22%2B254729383057%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22%24first_name%22%3A%20%22Thomas%20Joel%22%2C%22%24last_name%22%3A%20%22Karema%22%2C%22%24created%22%3A%20%22Aug.%2013%2C%202014%2C%207%3A13%20p.m.%22%2C%22%24last_login%22%3A%20%22March%2031%2C%202016%2C%2010%3A08%20a.m.%22%2C%22%24email%22%3A%20%22josiah%40dumaworks.com%22%2C%22%24phone%22%3A%20%22%2B254729383057%22%2C%22Location%22%3A%20%22Nairobi%22%2C%22Birth%20date%22%3A%20%22Jan.%201%2C%201987%22%2C%22Gender%22%3A%20%22None%22%2C%22Salary%22%3A%20%2220%2C000%20-%2030%2C000%22%2C%22Employment%20status%22%3A%20%22NA%22%2C%22Profile%20type%22%3A%20%22Both%20of%20these%22%2C%22Availability%22%3A%20%22Full%20Time%20Job%20%22%2C%22__mps%22%3A%20%7B%7D%2C%22__mpso%22%3A%20%7B%7D%2C%22__mpa%22%3A%20%7B%7D%2C%22__mpu%22%3A%20%7B%7D%2C%22__mpap%22%3A%20%5B%5D%2C%22utm_source%22%3A%20%22internal%22%2C%22utm_medium%22%3A%20%22email%22%2C%22utm_campaign%22%3A%20%22job_match%22%7D; csrftoken=cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J; intercom-id=8c805082-8cce-4e6d-b7be-3ec8051ef412; _csrf=d827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220vFLl24I2mnY9BwOso_uJUHkniZ57-bg%22%3B%7D; PHPSESSID=flpqo9e4j3hn88653ipnit2v75'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Fedora) PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'root@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/nyan/frontend/web/index.php'
+    'REMOTE_PORT' => '34792'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/nyan/frontend/web/index.php'
+    'SCRIPT_NAME' => '/nyan/frontend/web/index.php'
+    'PHP_SELF' => '/nyan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1461606930.574
+    'REQUEST_TIME' => 1461606930
+]
+2016-04-25 20:55:30 [127.0.0.1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '->' (T_OBJECT_OPERATOR)' in /srv/applications/nyan/Yii2App/frontend/views/site/index.php:3
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-04-25 20:55:30 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'optimizelyEndUserId' => 'oeu1439375245303r0.6806553206406534'
+    'my_wikiUserName' => 'Admin'
+    'lang' => 'b0db432cfa3b23847a3d6f40d71352452ede168as:2:\"en\";'
+    '_ga' => 'GA1.1.374315403.1440244560'
+    'sessionid' => '4anlm436k2l9p5t4c7fbnkpvg7nq28fd'
+    'optimizelySegments' => '{\"1841770756\":\"false\",\"1845570707\":\"gc\",\"1846311007\":\"campaign\"}'
+    'optimizelyBuckets' => '{}'
+    'mp_7dee34a3b508f34cfdecef0494099696_mixpanel' => '{\"distinct_id\": \"+254729383057\",\"$initial_referrer\": \"$direct\",\"$initial_referring_domain\": \"$direct\",\"$first_name\": \"Thomas Joel\",\"$last_name\": \"Karema\",\"$created\": \"Aug. 13, 2014, 7:13 p.m.\",\"$last_login\": \"March 31, 2016, 10:08 a.m.\",\"$email\": \"josiah@dumaworks.com\",\"$phone\": \"+254729383057\",\"Location\": \"Nairobi\",\"Birth date\": \"Jan. 1, 1987\",\"Gender\": \"None\",\"Salary\": \"20,000 - 30,000\",\"Employment status\": \"NA\",\"Profile type\": \"Both of these\",\"Availability\": \"Full Time Job \",\"__mps\": {},\"__mpso\": {},\"__mpa\": {},\"__mpu\": {},\"__mpap\": [],\"utm_source\": \"internal\",\"utm_medium\": \"email\",\"utm_campaign\": \"job_match\"}'
+    'csrftoken' => 'cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J'
+    'intercom-id' => '8c805082-8cce-4e6d-b7be-3ec8051ef412'
+    '_csrf' => 'd827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0vFLl24I2mnY9BwOso_uJUHkniZ57-bg\";}'
+    'PHPSESSID' => 'flpqo9e4j3hn88653ipnit2v75'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vx5aEi2l4gUbLepNvpkNAQAAAAU'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.86 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_REFERER' => 'http://localhost/nyan/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => 'optimizelyEndUserId=oeu1439375245303r0.6806553206406534; my_wikiUserName=Admin; lang=b0db432cfa3b23847a3d6f40d71352452ede168as%3A2%3A%22en%22%3B; _ga=GA1.1.374315403.1440244560; sessionid=4anlm436k2l9p5t4c7fbnkpvg7nq28fd; optimizelySegments=%7B%221841770756%22%3A%22false%22%2C%221845570707%22%3A%22gc%22%2C%221846311007%22%3A%22campaign%22%7D; optimizelyBuckets=%7B%7D; mp_7dee34a3b508f34cfdecef0494099696_mixpanel=%7B%22distinct_id%22%3A%20%22%2B254729383057%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22%24first_name%22%3A%20%22Thomas%20Joel%22%2C%22%24last_name%22%3A%20%22Karema%22%2C%22%24created%22%3A%20%22Aug.%2013%2C%202014%2C%207%3A13%20p.m.%22%2C%22%24last_login%22%3A%20%22March%2031%2C%202016%2C%2010%3A08%20a.m.%22%2C%22%24email%22%3A%20%22josiah%40dumaworks.com%22%2C%22%24phone%22%3A%20%22%2B254729383057%22%2C%22Location%22%3A%20%22Nairobi%22%2C%22Birth%20date%22%3A%20%22Jan.%201%2C%201987%22%2C%22Gender%22%3A%20%22None%22%2C%22Salary%22%3A%20%2220%2C000%20-%2030%2C000%22%2C%22Employment%20status%22%3A%20%22NA%22%2C%22Profile%20type%22%3A%20%22Both%20of%20these%22%2C%22Availability%22%3A%20%22Full%20Time%20Job%20%22%2C%22__mps%22%3A%20%7B%7D%2C%22__mpso%22%3A%20%7B%7D%2C%22__mpa%22%3A%20%7B%7D%2C%22__mpu%22%3A%20%7B%7D%2C%22__mpap%22%3A%20%5B%5D%2C%22utm_source%22%3A%20%22internal%22%2C%22utm_medium%22%3A%20%22email%22%2C%22utm_campaign%22%3A%20%22job_match%22%7D; csrftoken=cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J; intercom-id=8c805082-8cce-4e6d-b7be-3ec8051ef412; _csrf=d827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220vFLl24I2mnY9BwOso_uJUHkniZ57-bg%22%3B%7D; PHPSESSID=flpqo9e4j3hn88653ipnit2v75'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Fedora) PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'root@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/nyan/frontend/web/index.php'
+    'REMOTE_PORT' => '34793'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/nyan/frontend/web/index.php'
+    'SCRIPT_NAME' => '/nyan/frontend/web/index.php'
+    'PHP_SELF' => '/nyan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1461606930.926
+    'REQUEST_TIME' => 1461606930
+]
+2016-04-25 20:55:44 [127.0.0.1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method Yii::app()' in /srv/applications/nyan/Yii2App/frontend/views/site/index.php:3
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-04-25 20:55:44 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'optimizelyEndUserId' => 'oeu1439375245303r0.6806553206406534'
+    'my_wikiUserName' => 'Admin'
+    'lang' => 'b0db432cfa3b23847a3d6f40d71352452ede168as:2:\"en\";'
+    '_ga' => 'GA1.1.374315403.1440244560'
+    'sessionid' => '4anlm436k2l9p5t4c7fbnkpvg7nq28fd'
+    'optimizelySegments' => '{\"1841770756\":\"false\",\"1845570707\":\"gc\",\"1846311007\":\"campaign\"}'
+    'optimizelyBuckets' => '{}'
+    'mp_7dee34a3b508f34cfdecef0494099696_mixpanel' => '{\"distinct_id\": \"+254729383057\",\"$initial_referrer\": \"$direct\",\"$initial_referring_domain\": \"$direct\",\"$first_name\": \"Thomas Joel\",\"$last_name\": \"Karema\",\"$created\": \"Aug. 13, 2014, 7:13 p.m.\",\"$last_login\": \"March 31, 2016, 10:08 a.m.\",\"$email\": \"josiah@dumaworks.com\",\"$phone\": \"+254729383057\",\"Location\": \"Nairobi\",\"Birth date\": \"Jan. 1, 1987\",\"Gender\": \"None\",\"Salary\": \"20,000 - 30,000\",\"Employment status\": \"NA\",\"Profile type\": \"Both of these\",\"Availability\": \"Full Time Job \",\"__mps\": {},\"__mpso\": {},\"__mpa\": {},\"__mpu\": {},\"__mpap\": [],\"utm_source\": \"internal\",\"utm_medium\": \"email\",\"utm_campaign\": \"job_match\"}'
+    'csrftoken' => 'cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J'
+    'intercom-id' => '8c805082-8cce-4e6d-b7be-3ec8051ef412'
+    '_csrf' => 'd827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0vFLl24I2mnY9BwOso_uJUHkniZ57-bg\";}'
+    'PHPSESSID' => 'flpqo9e4j3hn88653ipnit2v75'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vx5aIKoFVaiogIk-Q21SGAAAAAo'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.86 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/nyan/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => 'optimizelyEndUserId=oeu1439375245303r0.6806553206406534; my_wikiUserName=Admin; lang=b0db432cfa3b23847a3d6f40d71352452ede168as%3A2%3A%22en%22%3B; _ga=GA1.1.374315403.1440244560; sessionid=4anlm436k2l9p5t4c7fbnkpvg7nq28fd; optimizelySegments=%7B%221841770756%22%3A%22false%22%2C%221845570707%22%3A%22gc%22%2C%221846311007%22%3A%22campaign%22%7D; optimizelyBuckets=%7B%7D; mp_7dee34a3b508f34cfdecef0494099696_mixpanel=%7B%22distinct_id%22%3A%20%22%2B254729383057%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22%24first_name%22%3A%20%22Thomas%20Joel%22%2C%22%24last_name%22%3A%20%22Karema%22%2C%22%24created%22%3A%20%22Aug.%2013%2C%202014%2C%207%3A13%20p.m.%22%2C%22%24last_login%22%3A%20%22March%2031%2C%202016%2C%2010%3A08%20a.m.%22%2C%22%24email%22%3A%20%22josiah%40dumaworks.com%22%2C%22%24phone%22%3A%20%22%2B254729383057%22%2C%22Location%22%3A%20%22Nairobi%22%2C%22Birth%20date%22%3A%20%22Jan.%201%2C%201987%22%2C%22Gender%22%3A%20%22None%22%2C%22Salary%22%3A%20%2220%2C000%20-%2030%2C000%22%2C%22Employment%20status%22%3A%20%22NA%22%2C%22Profile%20type%22%3A%20%22Both%20of%20these%22%2C%22Availability%22%3A%20%22Full%20Time%20Job%20%22%2C%22__mps%22%3A%20%7B%7D%2C%22__mpso%22%3A%20%7B%7D%2C%22__mpa%22%3A%20%7B%7D%2C%22__mpu%22%3A%20%7B%7D%2C%22__mpap%22%3A%20%5B%5D%2C%22utm_source%22%3A%20%22internal%22%2C%22utm_medium%22%3A%20%22email%22%2C%22utm_campaign%22%3A%20%22job_match%22%7D; csrftoken=cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J; intercom-id=8c805082-8cce-4e6d-b7be-3ec8051ef412; _csrf=d827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220vFLl24I2mnY9BwOso_uJUHkniZ57-bg%22%3B%7D; PHPSESSID=flpqo9e4j3hn88653ipnit2v75'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Fedora) PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'root@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/nyan/frontend/web/index.php'
+    'REMOTE_PORT' => '34798'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/nyan/frontend/web/index.php'
+    'SCRIPT_NAME' => '/nyan/frontend/web/index.php'
+    'PHP_SELF' => '/nyan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1461606944.564
+    'REQUEST_TIME' => 1461606944
+]
+2016-04-25 20:55:44 [127.0.0.1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method Yii::app()' in /srv/applications/nyan/Yii2App/frontend/views/site/index.php:3
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-04-25 20:55:44 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'optimizelyEndUserId' => 'oeu1439375245303r0.6806553206406534'
+    'my_wikiUserName' => 'Admin'
+    'lang' => 'b0db432cfa3b23847a3d6f40d71352452ede168as:2:\"en\";'
+    '_ga' => 'GA1.1.374315403.1440244560'
+    'sessionid' => '4anlm436k2l9p5t4c7fbnkpvg7nq28fd'
+    'optimizelySegments' => '{\"1841770756\":\"false\",\"1845570707\":\"gc\",\"1846311007\":\"campaign\"}'
+    'optimizelyBuckets' => '{}'
+    'mp_7dee34a3b508f34cfdecef0494099696_mixpanel' => '{\"distinct_id\": \"+254729383057\",\"$initial_referrer\": \"$direct\",\"$initial_referring_domain\": \"$direct\",\"$first_name\": \"Thomas Joel\",\"$last_name\": \"Karema\",\"$created\": \"Aug. 13, 2014, 7:13 p.m.\",\"$last_login\": \"March 31, 2016, 10:08 a.m.\",\"$email\": \"josiah@dumaworks.com\",\"$phone\": \"+254729383057\",\"Location\": \"Nairobi\",\"Birth date\": \"Jan. 1, 1987\",\"Gender\": \"None\",\"Salary\": \"20,000 - 30,000\",\"Employment status\": \"NA\",\"Profile type\": \"Both of these\",\"Availability\": \"Full Time Job \",\"__mps\": {},\"__mpso\": {},\"__mpa\": {},\"__mpu\": {},\"__mpap\": [],\"utm_source\": \"internal\",\"utm_medium\": \"email\",\"utm_campaign\": \"job_match\"}'
+    'csrftoken' => 'cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J'
+    'intercom-id' => '8c805082-8cce-4e6d-b7be-3ec8051ef412'
+    '_csrf' => 'd827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0vFLl24I2mnY9BwOso_uJUHkniZ57-bg\";}'
+    'PHPSESSID' => 'flpqo9e4j3hn88653ipnit2v75'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vx5aILR29SSPfU9tx-YH2wAAAAI'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.86 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_REFERER' => 'http://localhost/nyan/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => 'optimizelyEndUserId=oeu1439375245303r0.6806553206406534; my_wikiUserName=Admin; lang=b0db432cfa3b23847a3d6f40d71352452ede168as%3A2%3A%22en%22%3B; _ga=GA1.1.374315403.1440244560; sessionid=4anlm436k2l9p5t4c7fbnkpvg7nq28fd; optimizelySegments=%7B%221841770756%22%3A%22false%22%2C%221845570707%22%3A%22gc%22%2C%221846311007%22%3A%22campaign%22%7D; optimizelyBuckets=%7B%7D; mp_7dee34a3b508f34cfdecef0494099696_mixpanel=%7B%22distinct_id%22%3A%20%22%2B254729383057%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22%24first_name%22%3A%20%22Thomas%20Joel%22%2C%22%24last_name%22%3A%20%22Karema%22%2C%22%24created%22%3A%20%22Aug.%2013%2C%202014%2C%207%3A13%20p.m.%22%2C%22%24last_login%22%3A%20%22March%2031%2C%202016%2C%2010%3A08%20a.m.%22%2C%22%24email%22%3A%20%22josiah%40dumaworks.com%22%2C%22%24phone%22%3A%20%22%2B254729383057%22%2C%22Location%22%3A%20%22Nairobi%22%2C%22Birth%20date%22%3A%20%22Jan.%201%2C%201987%22%2C%22Gender%22%3A%20%22None%22%2C%22Salary%22%3A%20%2220%2C000%20-%2030%2C000%22%2C%22Employment%20status%22%3A%20%22NA%22%2C%22Profile%20type%22%3A%20%22Both%20of%20these%22%2C%22Availability%22%3A%20%22Full%20Time%20Job%20%22%2C%22__mps%22%3A%20%7B%7D%2C%22__mpso%22%3A%20%7B%7D%2C%22__mpa%22%3A%20%7B%7D%2C%22__mpu%22%3A%20%7B%7D%2C%22__mpap%22%3A%20%5B%5D%2C%22utm_source%22%3A%20%22internal%22%2C%22utm_medium%22%3A%20%22email%22%2C%22utm_campaign%22%3A%20%22job_match%22%7D; csrftoken=cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J; intercom-id=8c805082-8cce-4e6d-b7be-3ec8051ef412; _csrf=d827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220vFLl24I2mnY9BwOso_uJUHkniZ57-bg%22%3B%7D; PHPSESSID=flpqo9e4j3hn88653ipnit2v75'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Fedora) PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'root@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/nyan/frontend/web/index.php'
+    'REMOTE_PORT' => '34799'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/nyan/frontend/web/index.php'
+    'SCRIPT_NAME' => '/nyan/frontend/web/index.php'
+    'PHP_SELF' => '/nyan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1461606944.838
+    'REQUEST_TIME' => 1461606944
+]
+2016-04-25 20:55:45 [127.0.0.1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method Yii::app()' in /srv/applications/nyan/Yii2App/frontend/views/site/index.php:3
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-04-25 20:55:45 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'optimizelyEndUserId' => 'oeu1439375245303r0.6806553206406534'
+    'my_wikiUserName' => 'Admin'
+    'lang' => 'b0db432cfa3b23847a3d6f40d71352452ede168as:2:\"en\";'
+    '_ga' => 'GA1.1.374315403.1440244560'
+    'sessionid' => '4anlm436k2l9p5t4c7fbnkpvg7nq28fd'
+    'optimizelySegments' => '{\"1841770756\":\"false\",\"1845570707\":\"gc\",\"1846311007\":\"campaign\"}'
+    'optimizelyBuckets' => '{}'
+    'mp_7dee34a3b508f34cfdecef0494099696_mixpanel' => '{\"distinct_id\": \"+254729383057\",\"$initial_referrer\": \"$direct\",\"$initial_referring_domain\": \"$direct\",\"$first_name\": \"Thomas Joel\",\"$last_name\": \"Karema\",\"$created\": \"Aug. 13, 2014, 7:13 p.m.\",\"$last_login\": \"March 31, 2016, 10:08 a.m.\",\"$email\": \"josiah@dumaworks.com\",\"$phone\": \"+254729383057\",\"Location\": \"Nairobi\",\"Birth date\": \"Jan. 1, 1987\",\"Gender\": \"None\",\"Salary\": \"20,000 - 30,000\",\"Employment status\": \"NA\",\"Profile type\": \"Both of these\",\"Availability\": \"Full Time Job \",\"__mps\": {},\"__mpso\": {},\"__mpa\": {},\"__mpu\": {},\"__mpap\": [],\"utm_source\": \"internal\",\"utm_medium\": \"email\",\"utm_campaign\": \"job_match\"}'
+    'csrftoken' => 'cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J'
+    'intercom-id' => '8c805082-8cce-4e6d-b7be-3ec8051ef412'
+    '_csrf' => 'd827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0vFLl24I2mnY9BwOso_uJUHkniZ57-bg\";}'
+    'PHPSESSID' => 'flpqo9e4j3hn88653ipnit2v75'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vx5aId3Qpn4ccJV4trLICAAAAAA'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.86 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/nyan/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => 'optimizelyEndUserId=oeu1439375245303r0.6806553206406534; my_wikiUserName=Admin; lang=b0db432cfa3b23847a3d6f40d71352452ede168as%3A2%3A%22en%22%3B; _ga=GA1.1.374315403.1440244560; sessionid=4anlm436k2l9p5t4c7fbnkpvg7nq28fd; optimizelySegments=%7B%221841770756%22%3A%22false%22%2C%221845570707%22%3A%22gc%22%2C%221846311007%22%3A%22campaign%22%7D; optimizelyBuckets=%7B%7D; mp_7dee34a3b508f34cfdecef0494099696_mixpanel=%7B%22distinct_id%22%3A%20%22%2B254729383057%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22%24first_name%22%3A%20%22Thomas%20Joel%22%2C%22%24last_name%22%3A%20%22Karema%22%2C%22%24created%22%3A%20%22Aug.%2013%2C%202014%2C%207%3A13%20p.m.%22%2C%22%24last_login%22%3A%20%22March%2031%2C%202016%2C%2010%3A08%20a.m.%22%2C%22%24email%22%3A%20%22josiah%40dumaworks.com%22%2C%22%24phone%22%3A%20%22%2B254729383057%22%2C%22Location%22%3A%20%22Nairobi%22%2C%22Birth%20date%22%3A%20%22Jan.%201%2C%201987%22%2C%22Gender%22%3A%20%22None%22%2C%22Salary%22%3A%20%2220%2C000%20-%2030%2C000%22%2C%22Employment%20status%22%3A%20%22NA%22%2C%22Profile%20type%22%3A%20%22Both%20of%20these%22%2C%22Availability%22%3A%20%22Full%20Time%20Job%20%22%2C%22__mps%22%3A%20%7B%7D%2C%22__mpso%22%3A%20%7B%7D%2C%22__mpa%22%3A%20%7B%7D%2C%22__mpu%22%3A%20%7B%7D%2C%22__mpap%22%3A%20%5B%5D%2C%22utm_source%22%3A%20%22internal%22%2C%22utm_medium%22%3A%20%22email%22%2C%22utm_campaign%22%3A%20%22job_match%22%7D; csrftoken=cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J; intercom-id=8c805082-8cce-4e6d-b7be-3ec8051ef412; _csrf=d827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220vFLl24I2mnY9BwOso_uJUHkniZ57-bg%22%3B%7D; PHPSESSID=flpqo9e4j3hn88653ipnit2v75'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Fedora) PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'root@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/nyan/frontend/web/index.php'
+    'REMOTE_PORT' => '34800'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/nyan/frontend/web/index.php'
+    'SCRIPT_NAME' => '/nyan/frontend/web/index.php'
+    'PHP_SELF' => '/nyan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1461606945.962
+    'REQUEST_TIME' => 1461606945
+]
+2016-04-25 20:55:46 [127.0.0.1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method Yii::app()' in /srv/applications/nyan/Yii2App/frontend/views/site/index.php:3
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-04-25 20:55:46 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'optimizelyEndUserId' => 'oeu1439375245303r0.6806553206406534'
+    'my_wikiUserName' => 'Admin'
+    'lang' => 'b0db432cfa3b23847a3d6f40d71352452ede168as:2:\"en\";'
+    '_ga' => 'GA1.1.374315403.1440244560'
+    'sessionid' => '4anlm436k2l9p5t4c7fbnkpvg7nq28fd'
+    'optimizelySegments' => '{\"1841770756\":\"false\",\"1845570707\":\"gc\",\"1846311007\":\"campaign\"}'
+    'optimizelyBuckets' => '{}'
+    'mp_7dee34a3b508f34cfdecef0494099696_mixpanel' => '{\"distinct_id\": \"+254729383057\",\"$initial_referrer\": \"$direct\",\"$initial_referring_domain\": \"$direct\",\"$first_name\": \"Thomas Joel\",\"$last_name\": \"Karema\",\"$created\": \"Aug. 13, 2014, 7:13 p.m.\",\"$last_login\": \"March 31, 2016, 10:08 a.m.\",\"$email\": \"josiah@dumaworks.com\",\"$phone\": \"+254729383057\",\"Location\": \"Nairobi\",\"Birth date\": \"Jan. 1, 1987\",\"Gender\": \"None\",\"Salary\": \"20,000 - 30,000\",\"Employment status\": \"NA\",\"Profile type\": \"Both of these\",\"Availability\": \"Full Time Job \",\"__mps\": {},\"__mpso\": {},\"__mpa\": {},\"__mpu\": {},\"__mpap\": [],\"utm_source\": \"internal\",\"utm_medium\": \"email\",\"utm_campaign\": \"job_match\"}'
+    'csrftoken' => 'cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J'
+    'intercom-id' => '8c805082-8cce-4e6d-b7be-3ec8051ef412'
+    '_csrf' => 'd827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0vFLl24I2mnY9BwOso_uJUHkniZ57-bg\";}'
+    'PHPSESSID' => 'flpqo9e4j3hn88653ipnit2v75'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vx5aIvdSGp3MX9csy8OwRgAAAAM'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.86 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_REFERER' => 'http://localhost/nyan/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => 'optimizelyEndUserId=oeu1439375245303r0.6806553206406534; my_wikiUserName=Admin; lang=b0db432cfa3b23847a3d6f40d71352452ede168as%3A2%3A%22en%22%3B; _ga=GA1.1.374315403.1440244560; sessionid=4anlm436k2l9p5t4c7fbnkpvg7nq28fd; optimizelySegments=%7B%221841770756%22%3A%22false%22%2C%221845570707%22%3A%22gc%22%2C%221846311007%22%3A%22campaign%22%7D; optimizelyBuckets=%7B%7D; mp_7dee34a3b508f34cfdecef0494099696_mixpanel=%7B%22distinct_id%22%3A%20%22%2B254729383057%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22%24first_name%22%3A%20%22Thomas%20Joel%22%2C%22%24last_name%22%3A%20%22Karema%22%2C%22%24created%22%3A%20%22Aug.%2013%2C%202014%2C%207%3A13%20p.m.%22%2C%22%24last_login%22%3A%20%22March%2031%2C%202016%2C%2010%3A08%20a.m.%22%2C%22%24email%22%3A%20%22josiah%40dumaworks.com%22%2C%22%24phone%22%3A%20%22%2B254729383057%22%2C%22Location%22%3A%20%22Nairobi%22%2C%22Birth%20date%22%3A%20%22Jan.%201%2C%201987%22%2C%22Gender%22%3A%20%22None%22%2C%22Salary%22%3A%20%2220%2C000%20-%2030%2C000%22%2C%22Employment%20status%22%3A%20%22NA%22%2C%22Profile%20type%22%3A%20%22Both%20of%20these%22%2C%22Availability%22%3A%20%22Full%20Time%20Job%20%22%2C%22__mps%22%3A%20%7B%7D%2C%22__mpso%22%3A%20%7B%7D%2C%22__mpa%22%3A%20%7B%7D%2C%22__mpu%22%3A%20%7B%7D%2C%22__mpap%22%3A%20%5B%5D%2C%22utm_source%22%3A%20%22internal%22%2C%22utm_medium%22%3A%20%22email%22%2C%22utm_campaign%22%3A%20%22job_match%22%7D; csrftoken=cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J; intercom-id=8c805082-8cce-4e6d-b7be-3ec8051ef412; _csrf=d827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220vFLl24I2mnY9BwOso_uJUHkniZ57-bg%22%3B%7D; PHPSESSID=flpqo9e4j3hn88653ipnit2v75'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Fedora) PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'root@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/nyan/frontend/web/index.php'
+    'REMOTE_PORT' => '34801'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/nyan/frontend/web/index.php'
+    'SCRIPT_NAME' => '/nyan/frontend/web/index.php'
+    'PHP_SELF' => '/nyan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1461606946.174
+    'REQUEST_TIME' => 1461606946
+]
+2016-04-25 20:58:09 [127.0.0.1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: /srv/applications/nyan/Yii2App/frontend/views/layouts/mimi.php' in /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/View.php:226
+Stack trace:
+#0 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->renderFile('/srv/applicatio...', Array, Object(frontend\controllers\SiteController))
+#1 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Controller.php(372): yii\base\Controller->renderContent('<div class="sit...')
+#2 /srv/applications/nyan/Yii2App/frontend/controllers/SiteController.php(106): yii\base\Controller->render('index')
+#3 [internal function]: frontend\controllers\SiteController->actionIndex()
+#4 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#5 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#7 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#8 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /srv/applications/nyan/Yii2App/frontend/web/index.php(18): yii\base\Application->run()
+#10 {main}
+2016-04-25 20:58:09 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'optimizelyEndUserId' => 'oeu1439375245303r0.6806553206406534'
+    'my_wikiUserName' => 'Admin'
+    'lang' => 'b0db432cfa3b23847a3d6f40d71352452ede168as:2:\"en\";'
+    '_ga' => 'GA1.1.374315403.1440244560'
+    'sessionid' => '4anlm436k2l9p5t4c7fbnkpvg7nq28fd'
+    'optimizelySegments' => '{\"1841770756\":\"false\",\"1845570707\":\"gc\",\"1846311007\":\"campaign\"}'
+    'optimizelyBuckets' => '{}'
+    'mp_7dee34a3b508f34cfdecef0494099696_mixpanel' => '{\"distinct_id\": \"+254729383057\",\"$initial_referrer\": \"$direct\",\"$initial_referring_domain\": \"$direct\",\"$first_name\": \"Thomas Joel\",\"$last_name\": \"Karema\",\"$created\": \"Aug. 13, 2014, 7:13 p.m.\",\"$last_login\": \"March 31, 2016, 10:08 a.m.\",\"$email\": \"josiah@dumaworks.com\",\"$phone\": \"+254729383057\",\"Location\": \"Nairobi\",\"Birth date\": \"Jan. 1, 1987\",\"Gender\": \"None\",\"Salary\": \"20,000 - 30,000\",\"Employment status\": \"NA\",\"Profile type\": \"Both of these\",\"Availability\": \"Full Time Job \",\"__mps\": {},\"__mpso\": {},\"__mpa\": {},\"__mpu\": {},\"__mpap\": [],\"utm_source\": \"internal\",\"utm_medium\": \"email\",\"utm_campaign\": \"job_match\"}'
+    'csrftoken' => 'cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J'
+    'intercom-id' => '8c805082-8cce-4e6d-b7be-3ec8051ef412'
+    '_csrf' => 'd827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0vFLl24I2mnY9BwOso_uJUHkniZ57-bg\";}'
+    'PHPSESSID' => 'flpqo9e4j3hn88653ipnit2v75'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vx5asfdSGp3MX9csy8OwRwAAAAM'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.86 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/nyan/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => 'optimizelyEndUserId=oeu1439375245303r0.6806553206406534; my_wikiUserName=Admin; lang=b0db432cfa3b23847a3d6f40d71352452ede168as%3A2%3A%22en%22%3B; _ga=GA1.1.374315403.1440244560; sessionid=4anlm436k2l9p5t4c7fbnkpvg7nq28fd; optimizelySegments=%7B%221841770756%22%3A%22false%22%2C%221845570707%22%3A%22gc%22%2C%221846311007%22%3A%22campaign%22%7D; optimizelyBuckets=%7B%7D; mp_7dee34a3b508f34cfdecef0494099696_mixpanel=%7B%22distinct_id%22%3A%20%22%2B254729383057%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22%24first_name%22%3A%20%22Thomas%20Joel%22%2C%22%24last_name%22%3A%20%22Karema%22%2C%22%24created%22%3A%20%22Aug.%2013%2C%202014%2C%207%3A13%20p.m.%22%2C%22%24last_login%22%3A%20%22March%2031%2C%202016%2C%2010%3A08%20a.m.%22%2C%22%24email%22%3A%20%22josiah%40dumaworks.com%22%2C%22%24phone%22%3A%20%22%2B254729383057%22%2C%22Location%22%3A%20%22Nairobi%22%2C%22Birth%20date%22%3A%20%22Jan.%201%2C%201987%22%2C%22Gender%22%3A%20%22None%22%2C%22Salary%22%3A%20%2220%2C000%20-%2030%2C000%22%2C%22Employment%20status%22%3A%20%22NA%22%2C%22Profile%20type%22%3A%20%22Both%20of%20these%22%2C%22Availability%22%3A%20%22Full%20Time%20Job%20%22%2C%22__mps%22%3A%20%7B%7D%2C%22__mpso%22%3A%20%7B%7D%2C%22__mpa%22%3A%20%7B%7D%2C%22__mpu%22%3A%20%7B%7D%2C%22__mpap%22%3A%20%5B%5D%2C%22utm_source%22%3A%20%22internal%22%2C%22utm_medium%22%3A%20%22email%22%2C%22utm_campaign%22%3A%20%22job_match%22%7D; csrftoken=cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J; intercom-id=8c805082-8cce-4e6d-b7be-3ec8051ef412; _csrf=d827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220vFLl24I2mnY9BwOso_uJUHkniZ57-bg%22%3B%7D; PHPSESSID=flpqo9e4j3hn88653ipnit2v75'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Fedora) PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'root@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/nyan/frontend/web/index.php'
+    'REMOTE_PORT' => '34811'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/nyan/frontend/web/index.php'
+    'SCRIPT_NAME' => '/nyan/frontend/web/index.php'
+    'PHP_SELF' => '/nyan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1461607089.839
+    'REQUEST_TIME' => 1461607089
+]
+2016-04-25 20:58:10 [127.0.0.1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: /srv/applications/nyan/Yii2App/frontend/views/layouts/mimi.php' in /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/View.php:226
+Stack trace:
+#0 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->renderFile('/srv/applicatio...', Array, Object(frontend\controllers\SiteController))
+#1 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Controller.php(372): yii\base\Controller->renderContent('<div class="sit...')
+#2 /srv/applications/nyan/Yii2App/frontend/controllers/SiteController.php(106): yii\base\Controller->render('index')
+#3 [internal function]: frontend\controllers\SiteController->actionIndex()
+#4 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#5 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#7 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#8 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /srv/applications/nyan/Yii2App/frontend/web/index.php(18): yii\base\Application->run()
+#10 {main}
+2016-04-25 20:58:10 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'optimizelyEndUserId' => 'oeu1439375245303r0.6806553206406534'
+    'my_wikiUserName' => 'Admin'
+    'lang' => 'b0db432cfa3b23847a3d6f40d71352452ede168as:2:\"en\";'
+    '_ga' => 'GA1.1.374315403.1440244560'
+    'sessionid' => '4anlm436k2l9p5t4c7fbnkpvg7nq28fd'
+    'optimizelySegments' => '{\"1841770756\":\"false\",\"1845570707\":\"gc\",\"1846311007\":\"campaign\"}'
+    'optimizelyBuckets' => '{}'
+    'mp_7dee34a3b508f34cfdecef0494099696_mixpanel' => '{\"distinct_id\": \"+254729383057\",\"$initial_referrer\": \"$direct\",\"$initial_referring_domain\": \"$direct\",\"$first_name\": \"Thomas Joel\",\"$last_name\": \"Karema\",\"$created\": \"Aug. 13, 2014, 7:13 p.m.\",\"$last_login\": \"March 31, 2016, 10:08 a.m.\",\"$email\": \"josiah@dumaworks.com\",\"$phone\": \"+254729383057\",\"Location\": \"Nairobi\",\"Birth date\": \"Jan. 1, 1987\",\"Gender\": \"None\",\"Salary\": \"20,000 - 30,000\",\"Employment status\": \"NA\",\"Profile type\": \"Both of these\",\"Availability\": \"Full Time Job \",\"__mps\": {},\"__mpso\": {},\"__mpa\": {},\"__mpu\": {},\"__mpap\": [],\"utm_source\": \"internal\",\"utm_medium\": \"email\",\"utm_campaign\": \"job_match\"}'
+    'csrftoken' => 'cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J'
+    'intercom-id' => '8c805082-8cce-4e6d-b7be-3ec8051ef412'
+    '_csrf' => 'd827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0vFLl24I2mnY9BwOso_uJUHkniZ57-bg\";}'
+    'PHPSESSID' => 'flpqo9e4j3hn88653ipnit2v75'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vx5asvBSClSMcpEDLDl3dgAAAAQ'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.86 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_REFERER' => 'http://localhost/nyan/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => 'optimizelyEndUserId=oeu1439375245303r0.6806553206406534; my_wikiUserName=Admin; lang=b0db432cfa3b23847a3d6f40d71352452ede168as%3A2%3A%22en%22%3B; _ga=GA1.1.374315403.1440244560; sessionid=4anlm436k2l9p5t4c7fbnkpvg7nq28fd; optimizelySegments=%7B%221841770756%22%3A%22false%22%2C%221845570707%22%3A%22gc%22%2C%221846311007%22%3A%22campaign%22%7D; optimizelyBuckets=%7B%7D; mp_7dee34a3b508f34cfdecef0494099696_mixpanel=%7B%22distinct_id%22%3A%20%22%2B254729383057%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22%24first_name%22%3A%20%22Thomas%20Joel%22%2C%22%24last_name%22%3A%20%22Karema%22%2C%22%24created%22%3A%20%22Aug.%2013%2C%202014%2C%207%3A13%20p.m.%22%2C%22%24last_login%22%3A%20%22March%2031%2C%202016%2C%2010%3A08%20a.m.%22%2C%22%24email%22%3A%20%22josiah%40dumaworks.com%22%2C%22%24phone%22%3A%20%22%2B254729383057%22%2C%22Location%22%3A%20%22Nairobi%22%2C%22Birth%20date%22%3A%20%22Jan.%201%2C%201987%22%2C%22Gender%22%3A%20%22None%22%2C%22Salary%22%3A%20%2220%2C000%20-%2030%2C000%22%2C%22Employment%20status%22%3A%20%22NA%22%2C%22Profile%20type%22%3A%20%22Both%20of%20these%22%2C%22Availability%22%3A%20%22Full%20Time%20Job%20%22%2C%22__mps%22%3A%20%7B%7D%2C%22__mpso%22%3A%20%7B%7D%2C%22__mpa%22%3A%20%7B%7D%2C%22__mpu%22%3A%20%7B%7D%2C%22__mpap%22%3A%20%5B%5D%2C%22utm_source%22%3A%20%22internal%22%2C%22utm_medium%22%3A%20%22email%22%2C%22utm_campaign%22%3A%20%22job_match%22%7D; csrftoken=cdwCUtcD8Bf5rQu02ttcaw1SWFYOsz1J; intercom-id=8c805082-8cce-4e6d-b7be-3ec8051ef412; _csrf=d827ce644ddcb9743b5ca66211e5e66233d2b62baa6594fbaa15359cf8944edca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220vFLl24I2mnY9BwOso_uJUHkniZ57-bg%22%3B%7D; PHPSESSID=flpqo9e4j3hn88653ipnit2v75'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Fedora) PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'root@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/nyan/frontend/web/index.php'
+    'REMOTE_PORT' => '34812'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/nyan/frontend/web/index.php'
+    'SCRIPT_NAME' => '/nyan/frontend/web/index.php'
+    'PHP_SELF' => '/nyan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1461607090.242
+    'REQUEST_TIME' => 1461607090
+]
