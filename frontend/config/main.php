@@ -31,6 +31,13 @@ return [
             		],
             ],
         ],
+    	'db' => [
+    			'class' => 'yii\db\Connection',
+    			'dsn' => 'mysql:host=localhost;dbname=mykazi',
+    			'username' => 'root',
+    			'password' => 'r00t',
+    			'charset' => 'utf8'
+    	],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -40,9 +47,21 @@ return [
                 ],
             ],
         ],
+    	
+    		'urlManager' => [
+    				'enablePrettyUrl' => true,
+    				'showScriptName' => true,
+    				'enableStrictParsing' => false,
+    				'rules' => [
+    						// ...
+    				],
+    		],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
     ],
+	'modules' => [
+			'gii' => 'yii\gii\Module'
+	],
     'params' => $params,
 ];

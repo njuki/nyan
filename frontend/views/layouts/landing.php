@@ -35,10 +35,10 @@ AppAsset::register($this);
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
                 ['label' => 'About', 'url' => ['/site/about']],
-                ['label' => 'Contact', 'url' => ['/site/contact']],
+                ['label' => 'How It Works', 'url' => ['/howitworks/customers']],
             ];
             if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+                $menuItems[] = ['label' => 'Register Business', 'url' => ['/business/create']];
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
                 $menuItems[] = [
@@ -61,12 +61,13 @@ AppAsset::register($this);
         <?= Alert::widget() ?>
         </div>
         <?= $content ?>
+        <?php echo $this->render('//layouts/partials/_contact_info');?>
+        <?php echo $this->render('//layouts/partials/_footer');?>
     </div>
 
     <footer class="footer">
         <div class="container">
         <p class="pull-left">&copy; My Kazi <?= date('Y') ?></p>
-        <p class="pull-right"><?= Yii::powered() ?></p>
         </div>
     </footer>
 

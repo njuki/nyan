@@ -221,10 +221,34 @@ h4.featurette-heading {
     padding: 0 5px;
 }
 
+.headline {
+    border-bottom: 1px solid #E9E9E9;
+    display: block;
+}
 
+.mgl0 {
+	margin-left: 0;
+}
 
+.pdl0 {
+	padding-left: 0;
+}
 
-
+.linum {
+    float: left;
+    padding: 6px 12px;
+    background-color: #efefef;
+    font-size: 16px;
+    font-weight: bold;
+    color: #07c;
+    border: 2px solid #b0deff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 1px 1px 4px #ddd;
+    -moz-box-shadow: 1px 1px 4px #ddd;
+    box-shadow: 1px 1px 4px #ddd;
+}
 
 
 

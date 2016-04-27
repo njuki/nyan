@@ -107,6 +107,7 @@ class SiteController extends Controller {
     }
 
     public function actionLogin() {
+    	$this->layout = 'landing';
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -145,6 +146,7 @@ class SiteController extends Controller {
     }
 
     public function actionAbout() {
+    	$this->layout = 'landing';
         return $this->render('about');
     }
 

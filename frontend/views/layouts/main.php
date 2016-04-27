@@ -26,7 +26,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'My Company',
+                'brandLabel' => 'My Kazi',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
@@ -35,10 +35,10 @@ AppAsset::register($this);
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
                 ['label' => 'About', 'url' => ['/site/about']],
-                ['label' => 'Contact', 'url' => ['/site/contact']],
+                ['label' => 'How It Works', 'url' => ['/howitworks/customers']],
             ];
             if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+                $menuItems[] = ['label' => 'Register Business', 'url' => ['/business/create']];
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
                 $menuItems[] = [
