@@ -26,6 +26,25 @@ class Businesses extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+
+	public static $INVITED = 1;
+	public static $ACTIVE = 2;
+	
+	public $STATUS = array(
+			'1' => 'INVITED',
+			'2' => 'ACTIVE'
+	);
+	
+	public static $NO_OF_EMPLOYEES = array(
+			'0' => '0',
+			'1-5' => '1-5',
+			'6-10' => '6-10',
+			'11-15' => '11-15',
+			'15-19' => '15-19',
+			'20+' => '20+',
+			'30+' => '30+'
+	);
+	
     public static function tableName()
     {
         return 'businesses';
@@ -37,7 +56,7 @@ class Businesses extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'streetAddress', 'status'], 'required'],
+            [['name', 'streetAddress', 'KRA_PIN', 'status'], 'required'],
             [['description'], 'string'],
             [['dateCreated', 'dateModified'], 'safe'],
             [['status'], 'integer'],
@@ -56,14 +75,14 @@ class Businesses extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
+            'name' => 'Business Name',
             'description' => 'Description',
             'streetAddress' => 'Street Address',
             'postalCode' => 'Postal Code',
             'noOfEmployees' => 'No Of Employees',
             'dateCreated' => 'Date Created',
             'dateModified' => 'Date Modified',
-            'KRA_PIN' => 'Kra  Pin',
+            'KRA_PIN' => 'KRA PIN',
             'status' => 'Status',
         ];
     }

@@ -3,6 +3,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use yii\helpers\Url;
 use frontend\assets\AppAsset;
 use frontend\widgets\Alert;
 
@@ -23,7 +24,10 @@ AppAsset::register($this);
 </head>
 <body>
     <?php $this->beginBody() ?>
-    <div class="wrap">
+    <div class="top_most">
+    <div class="container"><img src="<?php echo Url::to('@web/images/logo.png') ?>" class="logo"/>
+    </div>
+    </div>
         <?php
             NavBar::begin([
                 'brandLabel' => 'My Kazi',
@@ -54,7 +58,7 @@ AppAsset::register($this);
             NavBar::end();
         ?>
 
-        <div class="container">
+        <div class="container" style="margin-top: 100px">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>

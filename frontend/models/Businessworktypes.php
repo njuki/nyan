@@ -45,7 +45,7 @@ class Businessworktypes extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'workTypeID' => 'Work Type ID',
+            'workTypeID' => 'Work Type',
             'businessID' => 'Business ID',
             'dateCreated' => 'Date Created',
             'dateModified' => 'Date Modified',

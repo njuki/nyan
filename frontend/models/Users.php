@@ -41,8 +41,9 @@ class Users extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['giveName', 'familyName', 'email', 'mobile', 'isActive'], 'required'],
+            [['giveName', 'familyName', 'email', 'mobile', 'isActive', 'password'], 'required'],
             [['userType'], 'string'],
+        	[['email'], 'unique'],
             [['businessID', 'isActive', 'isStaff', 'isSuperAdmin'], 'integer'],
             [['lastLogin', 'dateCreated', 'dateModified'], 'safe'],
             [['giveName', 'familyName'], 'string', 'max' => 200],
@@ -59,7 +60,7 @@ class Users extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'giveName' => 'Give Name',
+            'giveName' => 'Given Name',
             'familyName' => 'Family Name',
             'email' => 'Email',
             'mobile' => 'Mobile',
