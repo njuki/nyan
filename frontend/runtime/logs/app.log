@@ -11383,3 +11383,138 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1461822670.289
     'REQUEST_TIME' => 1461822670
 ]
+2016-04-28 16:29:08 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mykazi.user' doesn't exist' in /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/db/Command.php:825
+Stack trace:
+#0 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/db/Command.php(825): PDOStatement->execute()
+#1 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/db/Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#2 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#3 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/db/ActiveQuery.php(285): yii\db\Query->one(NULL)
+#4 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveQuery->one()
+#5 /srv/applications/nyan/Yii2App/common/models/User.php(82): yii\db\BaseActiveRecord::findOne(Array)
+#6 /srv/applications/nyan/Yii2App/common/models/LoginForm.php(73): common\models\User::findByUsername('efgwg')
+#7 /srv/applications/nyan/Yii2App/common/models/LoginForm.php(44): common\models\LoginForm->getUser()
+#8 [internal function]: common\models\LoginForm->validatePassword('password', NULL)
+#9 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func(Array, 'password', NULL)
+#10 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(common\models\LoginForm), 'password')
+#11 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Model.php(351): yii\validators\Validator->validateAttributes(Object(common\models\LoginForm), Array)
+#12 /srv/applications/nyan/Yii2App/common/models/LoginForm.php(58): yii\base\Model->validate()
+#13 /srv/applications/nyan/Yii2App/frontend/controllers/SiteController.php(116): common\models\LoginForm->login()
+#14 [internal function]: frontend\controllers\SiteController->actionLogin()
+#15 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#16 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#17 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('login', Array)
+#18 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('site/login', Array)
+#19 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 /srv/applications/nyan/Yii2App/frontend/web/index.php(18): yii\base\Application->run()
+#21 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mykazi.user' doesn't exist
+The SQL being executed was: SELECT * FROM `user` WHERE (`username`='efgwg') AND (`status`=10)' in /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/db/Schema.php:595
+Stack trace:
+#0 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/db/Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/db/Command.php(363): yii\db\Command->queryInternal('fetch', NULL)
+#2 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#3 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/db/ActiveQuery.php(285): yii\db\Query->one(NULL)
+#4 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveQuery->one()
+#5 /srv/applications/nyan/Yii2App/common/models/User.php(82): yii\db\BaseActiveRecord::findOne(Array)
+#6 /srv/applications/nyan/Yii2App/common/models/LoginForm.php(73): common\models\User::findByUsername('efgwg')
+#7 /srv/applications/nyan/Yii2App/common/models/LoginForm.php(44): common\models\LoginForm->getUser()
+#8 [internal function]: common\models\LoginForm->validatePassword('password', NULL)
+#9 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func(Array, 'password', NULL)
+#10 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(common\models\LoginForm), 'password')
+#11 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Model.php(351): yii\validators\Validator->validateAttributes(Object(common\models\LoginForm), Array)
+#12 /srv/applications/nyan/Yii2App/common/models/LoginForm.php(58): yii\base\Model->validate()
+#13 /srv/applications/nyan/Yii2App/frontend/controllers/SiteController.php(116): common\models\LoginForm->login()
+#14 [internal function]: frontend\controllers\SiteController->actionLogin()
+#15 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#16 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#17 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('login', Array)
+#18 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('site/login', Array)
+#19 /srv/applications/nyan/Yii2App/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 /srv/applications/nyan/Yii2App/frontend/web/index.php(18): yii\base\Application->run()
+#21 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'mykazi.user' doesn't exist
+)
+
+2016-04-28 16:29:06 [127.0.0.1][-][-][info][application] $_POST = [
+    '_csrf' => 'bmhyQVpLLS4DGRZwayQYTDkmSxsUOEt.DwQ5OB04WEZXBjosNSpnVA=='
+    'LoginForm' => [
+        'username' => 'efgwg'
+        'password' => 'ewg4h435'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    'optimizelyEndUserId' => 'oeu1439375245303r0.6806553206406534'
+    'lang' => 'b0db432cfa3b23847a3d6f40d71352452ede168as:2:\"en\";'
+    'intercom-visitor-semaphore-kpetp0ye' => '1'
+    'PHPSESSID' => 'vu68pqppjg385egd7j9e3vujf6'
+    '_csrf' => '176ca5449a45affa26191876de9c3db103146b3afde1688f5b79aed3dacaaa27a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"mqd11o5bWN9ZNsfPalKyGsuh9nHmoaJz\";}'
+    'getElementById' => '1'
+    'djdt' => 'hide'
+    'optimizelySegments' => '{\"1841770756\":\"false\",\"1845570707\":\"gc\",\"1846311007\":\"campaign\"}'
+    'optimizelyBuckets' => '{}'
+    'mp_7dee34a3b508f34cfdecef0494099696_mixpanel' => '{\"distinct_id\": \"+254729383057\",\"$initial_referrer\": \"$direct\",\"$initial_referring_domain\": \"$direct\",\"$first_name\": \"Thomas Joel\",\"$last_name\": \"Karema\",\"$created\": \"Aug. 13, 2014, 7:13 p.m.\",\"$last_login\": \"April 28, 2016, 12:34 p.m.\",\"$email\": \"josiah@dumaworks.com\",\"$phone\": \"+254729383057\",\"Location\": \"Nairobi\",\"Birth date\": \"Jan. 1, 1987\",\"Gender\": \"None\",\"Salary\": \"1 - 0\",\"Employment status\": \"NA\",\"Profile type\": \"Both of these\",\"Availability\": \"Full Time Job \",\"__mps\": {},\"__mpso\": {},\"__mpa\": {},\"__mpu\": {},\"__mpap\": [],\"utm_source\": \"internal\",\"utm_medium\": \"email\",\"utm_campaign\": \"job_match\"}'
+    'mp_mixpanel__c' => '0'
+    '_ga' => 'GA1.1.374315403.1440244560'
+    '__utma' => '111872281.374315403.1440244560.1461835002.1461843333.3'
+    '__utmc' => '111872281'
+    '__utmz' => '111872281.1461673114.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)'
+    'intercom-id' => '8c805082-8cce-4e6d-b7be-3ec8051ef412'
+    'intercom-session-kpetp0ye' => 'K3hBL0RGbGlNMHhzdHZ4eEVNWXh5NGJvczlBVHFGYzlEMkJ6TDh4USsvZHFvcjdPZ0Y3Y1lKQjVOcVg3dkM5ay0tZGs3K0ZjMDVibkdYU24wanpLWU5wUT09--737eca3280774b551267831b16ff60735e1a3042'
+    'csrftoken' => 'DGeODKTB5Xnb4vyZ7JC5CVlPmoB7Ss10'
+    'sessionid' => 'nfhkmax9ky05e03wzpw171pxzgae7no8'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VyIQIhGAgbKCBDGIKVv0MQAAAAQ'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '199'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.86 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://localhost/nyan/frontend/web/index.php/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-GB,en-US;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => 'optimizelyEndUserId=oeu1439375245303r0.6806553206406534; lang=b0db432cfa3b23847a3d6f40d71352452ede168as%3A2%3A%22en%22%3B; intercom-visitor-semaphore-kpetp0ye=1; PHPSESSID=vu68pqppjg385egd7j9e3vujf6; _csrf=176ca5449a45affa26191876de9c3db103146b3afde1688f5b79aed3dacaaa27a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22mqd11o5bWN9ZNsfPalKyGsuh9nHmoaJz%22%3B%7D; getElementById=1; djdt=hide; optimizelySegments=%7B%221841770756%22%3A%22false%22%2C%221845570707%22%3A%22gc%22%2C%221846311007%22%3A%22campaign%22%7D; optimizelyBuckets=%7B%7D; mp_7dee34a3b508f34cfdecef0494099696_mixpanel=%7B%22distinct_id%22%3A%20%22%2B254729383057%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22%24first_name%22%3A%20%22Thomas%20Joel%22%2C%22%24last_name%22%3A%20%22Karema%22%2C%22%24created%22%3A%20%22Aug.%2013%2C%202014%2C%207%3A13%20p.m.%22%2C%22%24last_login%22%3A%20%22April%2028%2C%202016%2C%2012%3A34%20p.m.%22%2C%22%24email%22%3A%20%22josiah%40dumaworks.com%22%2C%22%24phone%22%3A%20%22%2B254729383057%22%2C%22Location%22%3A%20%22Nairobi%22%2C%22Birth%20date%22%3A%20%22Jan.%201%2C%201987%22%2C%22Gender%22%3A%20%22None%22%2C%22Salary%22%3A%20%221%20-%200%22%2C%22Employment%20status%22%3A%20%22NA%22%2C%22Profile%20type%22%3A%20%22Both%20of%20these%22%2C%22Availability%22%3A%20%22Full%20Time%20Job%20%22%2C%22__mps%22%3A%20%7B%7D%2C%22__mpso%22%3A%20%7B%7D%2C%22__mpa%22%3A%20%7B%7D%2C%22__mpu%22%3A%20%7B%7D%2C%22__mpap%22%3A%20%5B%5D%2C%22utm_source%22%3A%20%22internal%22%2C%22utm_medium%22%3A%20%22email%22%2C%22utm_campaign%22%3A%20%22job_match%22%7D; mp_mixpanel__c=0; _ga=GA1.1.374315403.1440244560; __utma=111872281.374315403.1440244560.1461835002.1461843333.3; __utmc=111872281; __utmz=111872281.1461673114.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); intercom-id=8c805082-8cce-4e6d-b7be-3ec8051ef412; intercom-session-kpetp0ye=K3hBL0RGbGlNMHhzdHZ4eEVNWXh5NGJvczlBVHFGYzlEMkJ6TDh4USsvZHFvcjdPZ0Y3Y1lKQjVOcVg3dkM5ay0tZGs3K0ZjMDVibkdYU24wanpLWU5wUT09--737eca3280774b551267831b16ff60735e1a3042; csrftoken=DGeODKTB5Xnb4vyZ7JC5CVlPmoB7Ss10; sessionid=nfhkmax9ky05e03wzpw171pxzgae7no8'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Fedora) PHP/5.6.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'root@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/nyan/frontend/web/index.php'
+    'REMOTE_PORT' => '52783'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/nyan/frontend/web/index.php/site/login'
+    'SCRIPT_NAME' => '/nyan/frontend/web/index.php'
+    'PATH_INFO' => '/site/login'
+    'PATH_TRANSLATED' => '/var/www/html/site/login'
+    'PHP_SELF' => '/nyan/frontend/web/index.php/site/login'
+    'REQUEST_TIME_FLOAT' => 1461850146.527
+    'REQUEST_TIME' => 1461850146
+]

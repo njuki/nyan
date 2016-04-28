@@ -25,7 +25,7 @@ AppAsset::register($this);
 <body>
     <?php $this->beginBody() ?>
     <div class="top_most">
-    <div class="container"><img src="<?php echo Url::to('@web/images/logo.png') ?>" class="logo"/>
+    <div class="container"><img src="<?php echo Url::to('@web/images/josiah_transparent2.png') ?>" class="logo"/>
     </div>
     </div>
         <?php
