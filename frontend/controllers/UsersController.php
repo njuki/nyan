@@ -3,7 +3,7 @@
 namespace  frontend\controllers;
 
 use Yii;
-use app\models\Users;
+use frontend\models\Users;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -13,7 +13,9 @@ use yii\filters\VerbFilter;
  * UsersController implements the CRUD actions for Users model.
  */
 class UsersController extends Controller
-{
+{	
+	public $layout = 'landing';
+
     public function behaviors()
     {
         return [
@@ -52,6 +54,13 @@ class UsersController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
+    
+    public function actionSuccess($id) {
+    	return $this->render ( 'success', [
+    			'model' => $this->findModel ( $id )
+    	] );
+    }
+    
 
     /**
      * Creates a new Users model.
@@ -70,7 +79,36 @@ class UsersController extends Controller
             ]);
         }
     }
+    
+    /**
+     * Creates a new Users model from public signup
+     * If creation is successful, the browser will be redirected to the 'success' page.
+     * @return mixed
+     */
+    public function actionSignup()
+    {
+    	$model = new Users();
+    
+    	if ($model->load(Yii::$app->request->post())) {
+    		$model->isActive = 1;
+    		$model->password = Yii::$app->security->generatePasswordHash($model->password);
+    		if($model->validate()) {
+    			$model->save();
+    			return $this->redirect(['success', 'id' => $model->id]);
+    			
+    		} else {
+    		return $this->render('create', [
+    				'model' => $model,
+    		]);
+    	}
 
+    	} else {
+    		return $this->render('create', [
+    				'model' => $model,
+    		]);
+    	}
+    }
+    
     /**
      * Updates an existing Users model.
      * If update is successful, the browser will be redirected to the 'view' page.

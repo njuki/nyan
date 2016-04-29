@@ -3,8 +3,8 @@
 namespace frontend\controllers;
 
 use Yii;
-use app\models\Businesses;
-use app\models\Users;
+use frontend\models\Businesses;
+use frontend\models\Users;
 use app\models\Worktypes;
 use app\models\Businessworktypes;
 use yii\data\ActiveDataProvider;
@@ -59,8 +59,10 @@ class BusinessController extends Controller {
 	}
 	
 	public function actionSuccess($id) {
+		$contact = Users::findOne(['businessID'=>$id]);
 		return $this->render ( 'success', [
-				'model' => $this->findModel ( $id )
+				'model' => $this->findModel ( $id ),
+				'contact' => $contact
 		] );
 	}
 	
@@ -95,7 +97,7 @@ class BusinessController extends Controller {
 					$user->load ( Yii::$app->request->post());
 					$user->businessID = $model->id;
 					$user->isActive = 1;
-					$user->password = md5($user->password);
+					$user->password = Yii::$app->security->generatePasswordHash($user->password);
 					if (! $user->save ()) {
 						$transaction->rollBack ();
 						return $this->render ( 'create', [ 
@@ -125,7 +127,7 @@ class BusinessController extends Controller {
 					
 					$transaction->commit ();
 					return $this->redirect ( [
-							'view',
+							'success',
 							'id' => $model->id
 					] );
 				} catch ( Exception $e ) {

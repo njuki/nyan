@@ -3,7 +3,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 
-use app\models\Worktypes;
+use frontend\models\Worktypes;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Businesses */
@@ -12,7 +12,7 @@ use app\models\Worktypes;
 
 <div class="businesses-form">
     <?php $form = ActiveForm::begin(); ?>
-    <?php echo $form->errorSummary(array($model, $bWorks)); ?>
+    <?php // echo $form->errorSummary(array($model, $bWorks)); ?>
     <div class="row">
 		<div class="col-md-6">
 	<div><h3 class="headline h mykazi_red">Your Business</h4></div>

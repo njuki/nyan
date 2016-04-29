@@ -10,23 +10,23 @@
 body {
 	color: #111;
 }
-.top_most {
-	position: fixed;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-    top: 0;
-    margin: 0;
-    background-color: #fff;
-    height: 50px;
+
+.quote  {
+	list-style-type: none;
+	padding:0;
+	margin: 0;
 }
 
+.quote  li a {
+	font-size: 14px;
+}
 .logo {
-	margin-top: 1px;
+	margin-top: -15px;
 	width: 90px
 }
-.navbar-fixed-top {
-	top: 50px;
+
+.navbar-inverse {
+	backgroound-color: #EFEFEF;
 }
 
 .breadcrumb {
@@ -273,6 +273,15 @@ h3.headline {
     -webkit-box-shadow: 1px 1px 4px #ddd;
     -moz-box-shadow: 1px 1px 4px #ddd;
     box-shadow: 1px 1px 4px #ddd;
+}
+
+blockquote a {
+	font-size: 14px !important
+}
+
+blockquote h4 {
+	font-size: 20px !important;
+	font-weight: bold;
 }
 
 

@@ -24,18 +24,28 @@ AppAsset::register($this);
 </head>
 <body>
     <?php $this->beginBody() ?>
-    <div class="top_most">
-    <div class="container"><img src="<?php echo Url::to('@web/images/josiah_transparent2.png') ?>" class="logo"/>
-    </div>
-    </div>
+       
+       
         <?php
             NavBar::begin([
-                'brandLabel' => 'My Kazi',
+                'brandLabel' => Html::img('@web/images/josiah_transparent2.png', ['alt'=>'My Kazi', 'class'=>'logo']),
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
+            
+
+            ?>
+                   
+                   <ul class="quote pull-right" style="margin: 5px 0 0 30px">
+                                <li> <?= Html::a('Get Quotes »', ['/jobs/post'], ['class' => 'btn btn-lg btn-warning']) ?></li>
+                    </ul>
+                   
+                   
+                   
+                   
+                      <?php 
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
                 ['label' => 'About', 'url' => ['/site/about']],
@@ -46,7 +56,7 @@ AppAsset::register($this);
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
                 $menuItems[] = [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                    'label' => 'Logout (' . Yii::$app->user->identity->email . ')',
                     'url' => ['/site/logout'],
                     'linkOptions' => ['data-method' => 'post']
                 ];
@@ -55,10 +65,11 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $menuItems,
             ]);
+            
             NavBar::end();
         ?>
 
-        <div class="container" style="margin-top: 100px">
+        <div class="container" style="margin-top: 50px">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>

@@ -1,4 +1,5 @@
 <?php
+use yii\helpers\Html;
 /* @var $this yii\web\View */
 $this->title = 'My Kazi | Find a tradesman - Electricians, Plumbers,
 	Painters and more...';
@@ -10,7 +11,9 @@ $this->title = 'My Kazi | Find a tradesman - Electricians, Plumbers,
       <div class="col-md-8">
         <h1 id="main-text" style="color: #C0504D">Find <span id="service_carousel" style="position: relative; display: inline-block;">Electricians</span></h1>
         <h3 class="h">The easy way...</h3>
-        <p><a class="btn btn-success btn-lg h" href="#" role="button">Get a Quote Now »</a> <a class="btn btn-primary btn-lg h" href="#" role="button">Register Business</a></p>
+        <p>
+        <?= Html::a('Get a Quote Now »', [''], ['class' => 'btn btn-success btn-lg h']) ?>
+        <?= Html::a('Register Business', ['/business/create'], ['class' => 'btn btn-primary btn-lg h']) ?>
       </div>
  
       <div class="col-md-4">
