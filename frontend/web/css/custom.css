@@ -20,14 +20,19 @@ body {
 .quote  li a {
 	font-size: 14px;
 }
+
 .logo {
 	margin-top: -15px;
 	width: 90px
+}
+#how_it_works_businesses a:hover {
+	text-decoration: none;
 }
 
 .navbar-inverse {
 	backgroound-color: #EFEFEF;
 }
+
 
 .breadcrumb {
 	margin-top: 15px;

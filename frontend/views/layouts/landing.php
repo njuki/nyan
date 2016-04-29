@@ -38,8 +38,8 @@ AppAsset::register($this);
 
             ?>
                    
-                   <ul class="quote pull-right" style="margin: 5px 0 0 30px">
-                                <li> <?= Html::a('Get Quotes »', ['/jobs/post'], ['class' => 'btn btn-lg btn-warning']) ?></li>
+                   <ul class="quote pull-right" style="margin: 5px 0 0 30px;">
+                                <li> <?= Html::a('Get Quotes »', ['/jobs/post'], ['class' => 'btn btn-lg btn-warning quote-btn']) ?></li>
                     </ul>
                    
                    
@@ -47,7 +47,7 @@ AppAsset::register($this);
                    
                       <?php 
             $menuItems = [
-                ['label' => 'Home', 'url' => ['/site/index']],
+                ['label' => 'Home', 'url' => ['/site/index', 'class'=>'short']],
                 ['label' => 'About', 'url' => ['/site/about']],
                 ['label' => 'How It Works', 'url' => ['/howitworks/customers']],
             ];
